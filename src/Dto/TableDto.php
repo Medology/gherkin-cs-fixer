@@ -17,7 +17,7 @@ class TableDto
      * Fill the properties from array.
      *
      * @param TableRowDto[] $cells  List of TableRowDto
-     * @param int[]   $widths List of columns widths
+     * @param int[]         $widths List of columns widths
      */
     public function __construct(array $cells, array $widths)
     {

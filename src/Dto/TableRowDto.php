@@ -19,9 +19,9 @@ class TableRowDto
     /**
      * Fill the properties from array.
      *
-     * @param string   $type   Type of the row
-     * @param string[] $cells  List of cells values
-     * @param string   $raw    Additional content for carry
+     * @param string   $type  Type of the row
+     * @param string[] $cells List of cells values
+     * @param string   $raw   Additional content for carry
      */
     public function __construct(array $cells, string $type = 'row', string $raw = '')
     {

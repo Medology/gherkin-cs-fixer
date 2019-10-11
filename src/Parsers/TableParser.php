@@ -35,7 +35,7 @@ class TableParser
     /**
      * Read table line from file and parse it into cells array.
      *
-     * @param  string     $table_row Line of the table.
+     * @param  string           $table_row Line of the table.
      * @return TableRowDto|null
      */
     private function parseRow(string $table_row): ?TableRowDto
@@ -59,7 +59,7 @@ class TableParser
      * Find the longest value in the column, and keep the record.
      *
      * @param  TableRowDto[] $table_cells 2D Array of table cells
-     * @return int[]   List of the width of the columns
+     * @return int[]         List of the width of the columns
      */
     private function computeColumnWidths(array $table_cells): array
     {
