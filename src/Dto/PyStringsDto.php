@@ -5,7 +5,7 @@ namespace Medology\GherkinCsFixer\Dto;
 /**
  * DTO class to carry multiple line text information.
  */
-class MultilineDto
+class PyStringsDto
 {
     /** @var string[] List of text rows. */
     private $rows;

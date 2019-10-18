@@ -2,12 +2,12 @@
 
 namespace Medology\GherkinCsFixer\Fixers;
 
-use Medology\GherkinCsFixer\Dto\MultilineDto;
+use Medology\GherkinCsFixer\Dto\PyStringsDto;
 
 /**
  * Fixes the multiple line text formatting.
  */
-class MultilineFixer
+class PyStringsFixer
 {
     /** @var int Padding value from left */
     private const PADDING = 13;
@@ -18,10 +18,10 @@ class MultilineFixer
     /**
      * Reformat the text.
      *
-     * @param  MultilineDto $dto Text content dto.
+     * @param  PyStringsDto $dto Text content dto.
      * @return string
      */
-    public function run(MultilineDto $dto): string
+    public function run(PyStringsDto $dto): string
     {
         $block_tag = str_pad(self::KEYWORD, self::PADDING, ' ', STR_PAD_LEFT) .PHP_EOL;
 

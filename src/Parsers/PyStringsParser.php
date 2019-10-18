@@ -3,20 +3,20 @@
 namespace Medology\GherkinCsFixer\Parsers;
 
 use Generator;
-use Medology\GherkinCsFixer\Dto\MultilineDto;
+use Medology\GherkinCsFixer\Dto\PyStringsDto;
 
 /**
  * Parse consecutive lines as text and fix the formatting.
  */
-class MultilineParser
+class PyStringsParser
 {
     /**
      * Parses the text block and return reformatted new one.
      *
      * @param  Generator    $fileReader File streamer
-     * @return MultilineDTO
+     * @return PyStringsDto
      */
-    public function run(Generator $fileReader): MultilineDTO
+    public function run(Generator $fileReader): PyStringsDto
     {
         // Skip the start line (starting """)
         $fileReader->next();
@@ -28,6 +28,6 @@ class MultilineParser
         // Skip the ending line
         $fileReader->next();
 
-        return new MultilineDTO($rows);
+        return new PyStringsDto($rows);
     }
 }
