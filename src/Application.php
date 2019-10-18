@@ -7,7 +7,9 @@ use Medology\GherkinCsFixer\Exceptions\FileNotFound;
 use Medology\GherkinCsFixer\Exceptions\FileWriteException;
 use Medology\GherkinCsFixer\Exceptions\InvalidKeywordException;
 use Medology\GherkinCsFixer\Fixers\FixerFactory;
+use Medology\GherkinCsFixer\Fixers\MultilineFixer;
 use Medology\GherkinCsFixer\Fixers\TableFixer;
+use Medology\GherkinCsFixer\Parsers\MultilineParser;
 use Medology\GherkinCsFixer\Parsers\StepParser;
 use Medology\GherkinCsFixer\Parsers\TableParser;
 
@@ -25,8 +27,14 @@ class Application
     /** @var TableParser Instance of TableParser */
     private $tableParser;
 
+    /** @var MultilineParser Instance of MultilineParser */
+    private $multilineParser;
+
     /** @var TableFixer Instance of TableFixer */
     private $tableFixer;
+
+    /** @var MultilineFixer Instance of MultilineFixer */
+    private $multilineFixer;
 
     /**
      * Application constructor.
@@ -39,6 +47,8 @@ class Application
         $this->stepParser = new StepParser();
         $this->tableParser = new TableParser();
         $this->tableFixer = new TableFixer();
+        $this->multilineFixer = new MultilineFixer();
+        $this->multilineParser = new MultilineParser();
     }
 
     /**
@@ -86,6 +96,9 @@ class Application
         $stepDto = $this->stepParser->run($fileReader->current());
         if ($stepDto->getKeyword() == 'Table') {
             return $this->tableFixer->run($this->tableParser->run($fileReader));
+        }
+        if ($stepDto->getKeyword() == 'Multiline') {
+            return $this->multilineFixer->run($this->multilineParser->run($fileReader));
         }
 
         $fileReader->next();
