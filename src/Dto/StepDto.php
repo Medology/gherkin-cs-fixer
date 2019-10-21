@@ -26,7 +26,7 @@ class StepDto
     public const SYMBOL_KEYWORDS = [
         '#'    => 'Comment', // Comment lines
         '|'    => 'Table',   // Table pipe
-        '"""'  => 'Multiline', // Multiline text start
+        PyStringsDto::KEYWORD  => PyStringsDto::KEYWORD, // PyStrings
     ];
 
     /** @var string Step line without keyword prefix. */

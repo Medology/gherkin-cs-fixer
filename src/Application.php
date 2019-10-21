@@ -3,6 +3,7 @@
 namespace Medology\GherkinCsFixer;
 
 use Generator;
+use Medology\GherkinCsFixer\Dto\PyStringsDto;
 use Medology\GherkinCsFixer\Exceptions\FileNotFound;
 use Medology\GherkinCsFixer\Exceptions\FileWriteException;
 use Medology\GherkinCsFixer\Exceptions\InvalidKeywordException;
@@ -97,7 +98,7 @@ class Application
         if ($stepDto->getKeyword() == 'Table') {
             return $this->tableFixer->run($this->tableParser->run($fileReader));
         }
-        if ($stepDto->getKeyword() == 'Multiline') {
+        if ($stepDto->getKeyword() == PyStringsDto::KEYWORD) {
             return $this->pyStringsFixer->run($this->pyStringsParser->run($fileReader));
         }
 

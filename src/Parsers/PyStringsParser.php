@@ -10,6 +10,7 @@ use Medology\GherkinCsFixer\Dto\PyStringsDto;
  */
 class PyStringsParser
 {
+
     /**
      * Parses the text block and return reformatted new one.
      *
@@ -18,14 +19,14 @@ class PyStringsParser
      */
     public function run(Generator $fileReader): PyStringsDto
     {
-        // Skip the start line (starting """)
+        // Skip the starting line of the block
         $fileReader->next();
         $rows = [];
-        while ('"""' != trim(($line = $fileReader->current()))) {
+        while (PyStringsDto::KEYWORD != trim(($line = $fileReader->current()))) {
             $rows[] = $line;
             $fileReader->next();
         }
-        // Skip the ending line
+        // Skip the closing line of the block
         $fileReader->next();
 
         return new PyStringsDto($rows);

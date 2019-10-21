@@ -10,6 +10,9 @@ class PyStringsDto
     /** @var string[] List of text rows. */
     private $rows;
 
+    /** @var string Text block starting and ending */
+    public const KEYWORD = '"""';
+
     /**
      * Fill the properties from array.
      *
@@ -23,7 +26,7 @@ class PyStringsDto
     /**
      * Gets the text rows.
      *
-     * @return array
+     * @return string[]
      */
     public function getContent(): array
     {
