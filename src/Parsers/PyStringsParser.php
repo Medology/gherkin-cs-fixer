@@ -10,7 +10,6 @@ use Medology\GherkinCsFixer\Dto\PyStringsDto;
  */
 class PyStringsParser
 {
-
     /**
      * Parses the text block and return reformatted new one.
      *

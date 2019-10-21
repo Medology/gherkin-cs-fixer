@@ -24,8 +24,8 @@ class StepDto
 
     /** @var array List of special characters that are not actually step keywords. */
     public const SYMBOL_KEYWORDS = [
-        '#'    => 'Comment', // Comment lines
-        '|'    => 'Table',   // Table pipe
+        '#'                    => 'Comment', // Comment lines
+        '|'                    => 'Table',   // Table pipe
         PyStringsDto::KEYWORD  => PyStringsDto::KEYWORD, // PyStrings
     ];
 
