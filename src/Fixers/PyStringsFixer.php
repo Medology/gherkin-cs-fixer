@@ -33,8 +33,12 @@ class PyStringsFixer
         $text = '';
         $start_padding = $this->dto->getHeaderPadding();
         foreach ($this->dto->getContent() as $row) {
-            $leftPadding = self::PADDING + max($row['padding'] - $start_padding, 0);
-            $text .= str_repeat(' ', $leftPadding) . $row['text'] . PHP_EOL;
+            if(trim($row['text']) !== '') {
+                $leftPadding = self::PADDING + max($row['padding'] - $start_padding, 0);
+                $text .= str_repeat(' ', $leftPadding) . $row['text'] . PHP_EOL;
+            } else {
+                $text .= PHP_EOL;
+            }
         }
 
         return  $block_tag . $text . $block_tag;
