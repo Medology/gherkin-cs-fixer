@@ -1,6 +1,7 @@
 bin/
 composer.json
 composer.lock
+tests/
 .dockerignore
 .git
 .gitignore
