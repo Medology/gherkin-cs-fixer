@@ -13,13 +13,14 @@ class GetBlockTagTest extends TestCase
      *
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTheBlockTagEndsWithANewLine() {
-        $blockTag = $this->invokeMethod( new PyStringsFixer(), 'getBlockTag');
+    public function testTheBlockTagEndsWithANewLine()
+    {
+        $blockTag = $this->invokeMethod(new PyStringsFixer(), 'getBlockTag');
 
         $this->assertSame(
             PHP_EOL,
-            substr($blockTag,-1,1), //gets the last character of the $blockTag string
-            "Expected the block tag to end with a new line but it did not."
+            substr($blockTag, -1, 1), //gets the last character of the $blockTag string
+            'Expected the block tag to end with a new line but it did not.'
         );
     }
 
@@ -28,7 +29,8 @@ class GetBlockTagTest extends TestCase
      *
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTheBlockTagHasTheCorrectAmountOfPadding() {
+    public function testTheBlockTagHasTheCorrectAmountOfPadding()
+    {
         preg_match('/\s+/', $this->invokeMethod(new PyStringsFixer(), 'getBlockTag'), $matches);
 
         $this->assertSame(
@@ -43,12 +45,13 @@ class GetBlockTagTest extends TestCase
      *
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTheBlockTagHasQuotesInCorrectPlace() {
-        $blockTag = $this->invokeMethod( new PyStringsFixer(), 'getBlockTag');
+    public function testTheBlockTagHasQuotesInCorrectPlace()
+    {
+        $blockTag = $this->invokeMethod(new PyStringsFixer(), 'getBlockTag');
 
         $this->assertSame(
             $expected = '"""',
-            substr($blockTag,-4,3), //gets the last character of the $blockTag string
+            substr($blockTag, -4, 3), //gets the last character of the $blockTag string
             "Expected the block tag to end with $expected just before the last new line, it did not."
         );
     }

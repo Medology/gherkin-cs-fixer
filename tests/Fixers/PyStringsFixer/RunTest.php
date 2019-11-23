@@ -21,7 +21,7 @@ class RunTest extends TestCase
             ['text' => '                        ', 'padding' => 10],
             ['text' => '          testing_on_line_3', 'padding' => 10],
             ['text' => '   ', 'padding' => 10],
-        ],10);
+        ], 10);
 
         $expected = <<<'text'
           """
@@ -35,7 +35,7 @@ text;
         $this->assertSame(
             $expected,
             $actual = (new PyStringsFixer())->run($pyStringsDto),
-            "Expected " . PHP_EOL . " >>>$expected<<< but got " . PHP_EOL . ">>>$actual<<<"
+            'Expected ' . PHP_EOL . " >>>$expected<<< but got " . PHP_EOL . ">>>$actual<<<"
         );
     }
 }

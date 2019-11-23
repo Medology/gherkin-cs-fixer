@@ -9,14 +9,14 @@ use Tests\TestCase;
 class GetLeftPaddingTest extends TestCase
 {
     /**
-     * Test the final amount of padding is correct
+     * Test the final amount of padding is correct.
      *
      * @dataProvider paddingExamples
      *
-     * @param  int $startPadding    The staring amount of padding
-     * @param  int $textPadding     The amount of padding the text is supposed to have
-     * @param  int $expectedPadding The expected amount of padding
-     * @throws ReflectionException  When fails to create a reflection class.
+     * @param  int                 $startPadding    The staring amount of padding
+     * @param  int                 $textPadding     The amount of padding the text is supposed to have
+     * @param  int                 $expectedPadding The expected amount of padding
+     * @throws ReflectionException When fails to create a reflection class.
      */
     public function testTheAmountOfPaddingTheTextShouldBePaddedWith(
         int $startPadding,

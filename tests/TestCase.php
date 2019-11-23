@@ -34,8 +34,8 @@ class TestCase extends BaseTestCase
      *
      * @param  object|string       $object Instantiated object that we will access the property.
      * @param  string              $name   Name of the property to access.
-     * @return ReflectionProperty
      * @throws ReflectionException
+     * @return ReflectionProperty
      */
     protected function makePropertyAccessible($object, $name)
     {

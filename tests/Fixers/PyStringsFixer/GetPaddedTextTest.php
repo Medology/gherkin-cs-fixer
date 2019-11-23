@@ -13,8 +13,8 @@ class GetPaddedTextTest extends TestCase
      *
      * @dataProvider paddingExamples
      *
-     * @param  int $startPadding   The original start padding
-     * @param  int $textPadding    The original text padding
+     * @param  int                 $startPadding The original start padding
+     * @param  int                 $textPadding  The original text padding
      * @throws ReflectionException When fails to create a reflection class.
      */
     public function testTextEndsWithANewLine(int $startPadding, int $textPadding)
@@ -27,8 +27,8 @@ class GetPaddedTextTest extends TestCase
 
         $this->assertSame(
             PHP_EOL,
-            substr($text,-1,1), //gets the last character of the $text string
-            "Expected text to end with a new line but it did not."
+            substr($text, -1, 1), //gets the last character of the $text string
+            'Expected text to end with a new line but it did not.'
         );
     }
 
@@ -37,8 +37,8 @@ class GetPaddedTextTest extends TestCase
      *
      * @dataProvider paddingExamples
      *
-     * @param  int $startPadding   The original start padding
-     * @param  int $textPadding    The original text padding
+     * @param  int                 $startPadding The original start padding
+     * @param  int                 $textPadding  The original text padding
      * @throws ReflectionException When fails to create a reflection class.
      */
     public function testTextContainsOriginalString(int $startPadding, int $textPadding)

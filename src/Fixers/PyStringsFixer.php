@@ -24,7 +24,7 @@ class PyStringsFixer
         $text = '';
         foreach ($dto->getContent() as $row) {
             $text .= trim($row['text'])
-                ? $this->getPaddedText($row['text'],$start_padding,$row['padding'])
+                ? $this->getPaddedText($row['text'], $start_padding, $row['padding'])
                 : PHP_EOL;
         }
         $block_tag = $this->getBlockTag();
@@ -33,11 +33,11 @@ class PyStringsFixer
     }
 
     /**
-     * Get the text with the expected padding
+     * Get the text with the expected padding.
      *
-     * @param  string $text       The text string
-     * @param  int $startPadding The original start padding
-     * @param  int $textPadding   The original text padding
+     * @param  string $text         The text string
+     * @param  int    $startPadding The original start padding
+     * @param  int    $textPadding  The original text padding
      * @return string
      */
     private function getPaddedText(string $text, int $startPadding, int $textPadding): string
@@ -49,7 +49,7 @@ class PyStringsFixer
      * Get the number of padding spaces.
      *
      * @param  int $startPadding The original start padding
-     * @param  int $textPadding   The original text padding
+     * @param  int $textPadding  The original text padding
      * @return int
      */
     private function getLeftPadding(int $startPadding, int $textPadding): int
@@ -58,7 +58,7 @@ class PyStringsFixer
     }
 
     /**
-     * Get the block tag with the padding
+     * Get the block tag with the padding.
      *
      * @return string
      */
