@@ -1,5 +1,8 @@
+bin/
+composer.json
+composer.lock
+.dockerignore
+.git
+.gitignore
+.idea/
 .pullapprove.yml
-bin/init
-bin/lib
-bin/linux-sed
-bin/php
