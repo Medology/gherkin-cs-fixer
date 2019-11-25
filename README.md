@@ -20,11 +20,11 @@ After fixed
 
 ### Setting up the project for development:
 
-You will also want to ensure that `./bin`, `./node_modules/.bin` & `./vendor/bin` is in your `$PATH` and is the highest priority. You can do so by adding the following to your shell profile:
+You will also want to ensure that `./bin` & `./vendor/bin` is in your `$PATH` and is the highest priority. `./node_modules/.bin` should be included in you `$PATH` at the lowest priority. You can do so by adding the following to your shell profile:
 
-    export PATH=./bin:./node_modules/.bin:./vendor/bin:$PATH
+    export PATH=./bin:./vendor/bin:$PATH:./node_modules/.bin
   
-Run `docker_build`. This will build setup the project dependencies if they are not already and create a local docker image called `local_gherkin_fixer` that you can use for testing
+Run `docker_build`. This will build setup the project dependencies if they are not already and create a local docker image called `local:gherkin_fixer` that you can use for testing
 
 ### Testing
 

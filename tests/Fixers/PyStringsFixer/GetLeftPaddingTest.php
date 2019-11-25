@@ -13,27 +13,19 @@ class GetLeftPaddingTest extends TestCase
      *
      * @dataProvider paddingExamples
      *
-     * @param  int                 $startPadding    The staring amount of padding
-     * @param  int                 $textPadding     The amount of padding the text is supposed to have
-     * @param  int                 $expectedPadding The expected amount of padding
+     * @param  int                 $startPadding    The starting amount of padding before the real data.
+     * @param  int                 $textPadding     The amount of padding the single line of text is supposed to have.
+     * @param  int                 $expectedPadding The expected amount of total padding for the line.
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTheAmountOfPaddingTheTextShouldBePaddedWith(
-        int $startPadding,
-        int $textPadding,
-        int $expectedPadding
-    ): void {
+    public function testCorrectLengthIsReturned(int $startPadding, int $textPadding, int $expectedPadding): void {
         $actualPadding = $this->invokeMethod(
             new PyStringsFixer(),
             'getLeftPadding',
             [$startPadding, $textPadding]
         );
 
-        $this->assertSame(
-            $expectedPadding,
-            $actualPadding,
-            "Expected the amount of padding to be $expectedPadding but got $actualPadding"
-        );
+        $this->assertSame($expectedPadding, $actualPadding);
     }
 
     /**
@@ -42,10 +34,11 @@ class GetLeftPaddingTest extends TestCase
     public function paddingExamples(): array
     {
         return [
-            [10, 10, 10],
-            [5, 10, 15],
-            [10, 5, 10],
-            [10, 20, 20],
+            // startPadding  textPadding  expectedPadding
+            [            10,          10,              10],
+            [             5,          10,              15],
+            [            10,           5,              10],
+            [            10,          20,              20],
         ];
     }
 }
