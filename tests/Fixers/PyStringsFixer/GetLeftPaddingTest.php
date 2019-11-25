@@ -22,7 +22,7 @@ class GetLeftPaddingTest extends TestCase
         int $startPadding,
         int $textPadding,
         int $expectedPadding
-    ) {
+    ): void {
         $actualPadding = $this->invokeMethod(
             new PyStringsFixer(),
             'getLeftPadding',
@@ -37,9 +37,9 @@ class GetLeftPaddingTest extends TestCase
     }
 
     /**
-     * Examples of padding.
+     * Examples of number of padding spaces and the expected outcome.
      */
-    public function paddingExamples()
+    public function paddingExamples(): array
     {
         return [
             [10, 10, 10],

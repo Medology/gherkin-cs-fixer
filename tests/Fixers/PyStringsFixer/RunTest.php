@@ -14,7 +14,7 @@ class RunTest extends TestCase
     /**
      * Test that blank pyString lines do contain any white space.
      */
-    public function testBlankLinesInPyStringsDoNotContainAnyWhiteSpace()
+    public function testBlankLinesInPyStringsDoNotContainAnyWhiteSpace(): void
     {
         $pyStringsDto = new PyStringsDto([
             ['text' => '          testing_on_line_1', 'padding' => 10],

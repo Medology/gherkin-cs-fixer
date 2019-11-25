@@ -10,7 +10,7 @@ use Medology\GherkinCsFixer\Dto\PyStringsDto;
 class PyStringsFixer
 {
     /** @var int Padding value from left */
-    const PADDING = 10;
+    public const PADDING = 10;
 
     /**
      * Reformat the text.

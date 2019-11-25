@@ -17,7 +17,7 @@ class GetPaddedTextTest extends TestCase
      * @param  int                 $textPadding  The original text padding
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTextEndsWithANewLine(int $startPadding, int $textPadding)
+    public function testTextEndsWithANewLine(int $startPadding, int $textPadding): void
     {
         $text = $this->invokeMethod(
             new PyStringsFixer(),
@@ -41,7 +41,7 @@ class GetPaddedTextTest extends TestCase
      * @param  int                 $textPadding  The original text padding
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTextContainsOriginalString(int $startPadding, int $textPadding)
+    public function testTextContainsOriginalString(int $startPadding, int $textPadding): void
     {
         $text = $this->invokeMethod(
             new PyStringsFixer(),
@@ -56,7 +56,7 @@ class GetPaddedTextTest extends TestCase
         );
     }
 
-    public function paddingExamples()
+    public function paddingExamples(): array
     {
         return [
             [0, 0],

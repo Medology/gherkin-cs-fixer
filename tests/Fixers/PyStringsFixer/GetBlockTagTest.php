@@ -13,7 +13,7 @@ class GetBlockTagTest extends TestCase
      *
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTheBlockTagEndsWithANewLine()
+    public function testTheBlockTagEndsWithANewLine(): void
     {
         $blockTag = $this->invokeMethod(new PyStringsFixer(), 'getBlockTag');
 
@@ -29,7 +29,7 @@ class GetBlockTagTest extends TestCase
      *
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTheBlockTagHasTheCorrectAmountOfPadding()
+    public function testTheBlockTagHasTheCorrectAmountOfPadding(): void
     {
         preg_match('/\s+/', $this->invokeMethod(new PyStringsFixer(), 'getBlockTag'), $matches);
 
@@ -45,7 +45,7 @@ class GetBlockTagTest extends TestCase
      *
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testTheBlockTagHasQuotesInCorrectPlace()
+    public function testTheBlockTagHasQuotesInCorrectPlace(): void
     {
         $blockTag = $this->invokeMethod(new PyStringsFixer(), 'getBlockTag');
 
