@@ -18,7 +18,8 @@ class GetLeftPaddingTest extends TestCase
      * @param  int                 $expectedPadding The expected amount of total padding for the line.
      * @throws ReflectionException When fails to create a reflection class.
      */
-    public function testCorrectLengthIsReturned(int $startPadding, int $textPadding, int $expectedPadding): void {
+    public function testCorrectLengthIsReturned(int $startPadding, int $textPadding, int $expectedPadding): void
+    {
         $actualPadding = $this->invokeMethod(
             new PyStringsFixer(),
             'getLeftPadding',
@@ -34,11 +35,11 @@ class GetLeftPaddingTest extends TestCase
     public function paddingExamples(): array
     {
         return [
-            // startPadding  textPadding  expectedPadding
-            [            10,          10,              10],
-            [             5,          10,              15],
-            [            10,           5,              10],
-            [            10,          20,              20],
+        //  startPadding  textPadding  expectedPadding
+            [10,          10,          10],
+            [5,           10,          15],
+            [10,          5,           10],
+            [10,          20,          20],
         ];
     }
 }
