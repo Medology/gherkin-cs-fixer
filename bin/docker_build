@@ -17,5 +17,5 @@ if [[ "${1:-''}" != 'production' ]]; then
     docker build ${ROOT} \
       -f docker/Dockerfile \
       -t local:gherkin_fixer \
-      --build-arg PHP_IMAGE=${PHP_IMAGE}
+      --build-arg PHP_IMAGE
 fi
