@@ -11,7 +11,7 @@ if [[ ! -f "$ROOT"/bin/composer ]]; then
   . "$ROOT"/bin/init/install_composer.sh
 fi
 
-if [[ ${@} != 'production' ]]; then
+if [[ "${1:-''}" != 'production' ]]; then
     composer install
     # Build Gherkin CS Fixer image for testing
     docker build ${ROOT} \
