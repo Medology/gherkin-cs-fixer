@@ -69,7 +69,6 @@ class PyStringsFixer
             strlen(PyStringsDto::KEYWORD) + self::PADDING,
             ' ',
             STR_PAD_LEFT
-            )
-            . PHP_EOL;
+        ) . PHP_EOL;
     }
 }
