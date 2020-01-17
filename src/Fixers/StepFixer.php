@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Medology\GherkinCsFixer\Fixers;
 
@@ -7,8 +9,8 @@ use Medology\GherkinCsFixer\Dto\StepDto;
 /**
  * Abstract Fixer main class.
  *
- * @property int $padding       Left padding.
- * @property int $keyword       Keyword of the step.
+ * @property int $padding Left padding.
+ * @property int $keyword Keyword of the step.
  */
 abstract class StepFixer
 {
@@ -26,20 +28,18 @@ abstract class StepFixer
     public function __construct(StepDto $stepDto)
     {
         $this->step_body = $stepDto->getBody();
-        $this->newline = $stepDto->hasLineBreak() && $this->newline;
+        $this->newline   = $stepDto->hasLineBreak() && $this->newline;
     }
 
     /**
      * Fix the step and return reformatted string.
-     *
-     * @return string
      */
     public function run(): string
     {
-        return ($this->newline ? PHP_EOL : '') .
-            str_repeat(' ', $this->padding) .
-            $this->keyword .
-            $this->step_body .
+        return ($this->newline ? PHP_EOL : '').
+            str_repeat(' ', $this->padding).
+            $this->keyword.
+            $this->step_body.
             PHP_EOL;
     }
 }

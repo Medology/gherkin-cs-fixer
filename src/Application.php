@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Medology\GherkinCsFixer;
 
@@ -44,16 +46,17 @@ class Application
     /**
      * Application constructor.
      *
-     * @param  string[]                $files List of the files to be fixed.
+     * @param string[] $files list of the files to be fixed
+     *
      * @throws InvalidKeywordException When StepDto keyword mismatch
      */
     public function __construct(array $files)
     {
-        $this->files = $files;
-        $this->stepParser = new StepParser();
-        $this->tableParser = new TableParser();
-        $this->tableFixer = new TableFixer();
-        $this->pyStringsFixer = new PyStringsFixer();
+        $this->files           = $files;
+        $this->stepParser      = new StepParser();
+        $this->tableParser     = new TableParser();
+        $this->tableFixer      = new TableFixer();
+        $this->pyStringsFixer  = new PyStringsFixer();
         $this->pyStringsParser = new PyStringsParser();
         $this->previousStepDto = new StepDto();
     }
@@ -75,14 +78,15 @@ class Application
     /**
      * Fixes the formatting of the file.
      *
-     * @param  string                  $file_path Path to the test file.
+     * @param string $file_path path to the test file
+     *
      * @throws InvalidKeywordException From StepParser
      * @throws FileNotFound            From FileHelper
      * @throws FileWriteException      From FileHelper
      */
     private function fix(string $file_path): void
     {
-        $content = '';
+        $content    = '';
         $fileReader = FileHelper::readFile($file_path);
         while ($fileReader->current()) {
             $content .= $this->fixStep($fileReader);
@@ -94,9 +98,9 @@ class Application
     /**
      * Parses the line or table, fix the formatting and return.
      *
-     * @param  Generator               $fileReader File streamer
+     * @param Generator $fileReader File streamer
+     *
      * @throws InvalidKeywordException From StepParser
-     * @return string
      */
     private function fixStep(Generator $fileReader): string
     {

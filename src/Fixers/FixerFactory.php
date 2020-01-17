@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Medology\GherkinCsFixer\Fixers;
 
@@ -14,8 +16,7 @@ class FixerFactory
     /**
      * Gets related Fixer class.
      *
-     * @param  StepDto   $stepDTO Data transfer Object of the step
-     * @return StepFixer
+     * @param StepDto $stepDTO Data transfer Object of the step
      */
     public static function getStepFixer(StepDto $stepDTO): StepFixer
     {

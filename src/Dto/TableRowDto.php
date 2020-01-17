@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Medology\GherkinCsFixer\Dto;
 
@@ -26,14 +28,12 @@ class TableRowDto
     public function __construct(array $cells, string $type = 'row', string $raw = '')
     {
         $this->cells = $cells;
-        $this->type = $type;
-        $this->raw = $raw;
+        $this->type  = $type;
+        $this->raw   = $raw;
     }
 
     /**
      * Gets the cells.
-     *
-     * @return array
      */
     public function getCells(): array
     {
@@ -42,8 +42,6 @@ class TableRowDto
 
     /**
      * Gets the additional content.
-     *
-     * @return string
      */
     public function getRaw(): string
     {
@@ -52,8 +50,6 @@ class TableRowDto
 
     /**
      * Gets the type or row.
-     *
-     * @return string
      */
     public function getType(): string
     {

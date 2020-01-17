@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Medology\GherkinCsFixer\Fixers;
 
@@ -18,8 +20,7 @@ class PyStringsFixer
     /**
      * Reformat the text.
      *
-     * @param  PyStringsDto $dto Text content dto.
-     * @return string
+     * @param PyStringsDto $dto text content dto
      */
     public function run(PyStringsDto $dto): string
     {
@@ -28,15 +29,15 @@ class PyStringsFixer
                 PyStringsDto::KEYWORD,
                 strlen(PyStringsDto::KEYWORD) + self::PADDING,
                 ' ',
-                STR_PAD_LEFT) . PHP_EOL;
+                STR_PAD_LEFT).PHP_EOL;
 
-        $text = '';
+        $text          = '';
         $start_padding = $this->dto->getHeaderPadding();
         foreach ($this->dto->getContent() as $row) {
             $leftPadding = self::PADDING + max($row['padding'] - $start_padding, 0);
-            $text .= str_repeat(' ', $leftPadding) . $row['text'] . PHP_EOL;
+            $text .= str_repeat(' ', $leftPadding).$row['text'].PHP_EOL;
         }
 
-        return  $block_tag . $text . $block_tag;
+        return  $block_tag.$text.$block_tag;
     }
 }

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Medology\GherkinCsFixer\Dto;
 
@@ -21,7 +23,7 @@ class TableDto
      */
     public function __construct(array $cells, array $widths)
     {
-        $this->rows = $cells;
+        $this->rows          = $cells;
         $this->columns_width = $widths;
     }
 
@@ -38,8 +40,7 @@ class TableDto
     /**
      * Return size of the column.
      *
-     * @param  int $column Index of the column
-     * @return int
+     * @param int $column Index of the column
      */
     public function getColumnLength(int $column): int
     {
