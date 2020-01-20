@@ -31,7 +31,7 @@ class PyStringsFixer
                 ' ',
                 STR_PAD_LEFT).PHP_EOL;
 
-        $text          = '';
+        $text = '';
         $start_padding = $this->dto->getHeaderPadding();
         foreach ($this->dto->getContent() as $row) {
             $leftPadding = self::PADDING + max($row['padding'] - $start_padding, 0);

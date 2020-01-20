@@ -60,7 +60,7 @@ class StepDto
             throw new InvalidKeywordException('Mismatched parsed keyword: '.$content['keyword']);
         }
 
-        $this->body       = $content['body'] ?? '';
+        $this->body = $content['body'] ?? '';
         $this->line_break = $content['line_break'] ?? false;
     }
 

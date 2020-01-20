@@ -28,8 +28,8 @@ class TableRowDto
     public function __construct(array $cells, string $type = 'row', string $raw = '')
     {
         $this->cells = $cells;
-        $this->type  = $type;
-        $this->raw   = $raw;
+        $this->type = $type;
+        $this->raw = $raw;
     }
 
     /**

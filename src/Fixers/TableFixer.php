@@ -25,7 +25,7 @@ class TableFixer
      */
     public function run(TableDto $dto): string
     {
-        $this->dto     = $dto;
+        $this->dto = $dto;
         $table_content = '';
         foreach ($this->dto->getRows() as $rowDto) {
             $table_content .= $this->formatRow($rowDto);
@@ -61,7 +61,7 @@ class TableFixer
             return $left_padding.'#'.$rowDto->getRaw().PHP_EOL;
         }
         $row_cells = $this->setCellPadding($rowDto);
-        $content   = '| '.implode(' | ', $row_cells).' |'.PHP_EOL;
+        $content = '| '.implode(' | ', $row_cells).' |'.PHP_EOL;
 
         return $left_padding.$content;
     }

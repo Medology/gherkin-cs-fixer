@@ -28,7 +28,7 @@ abstract class StepFixer
     public function __construct(StepDto $stepDto)
     {
         $this->step_body = $stepDto->getBody();
-        $this->newline   = $stepDto->hasLineBreak() && $this->newline;
+        $this->newline = $stepDto->hasLineBreak() && $this->newline;
     }
 
     /**

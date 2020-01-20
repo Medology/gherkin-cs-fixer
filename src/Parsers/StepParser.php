@@ -36,7 +36,7 @@ class StepParser
      */
     public function run(string $raw_step, StepDto $previousStep): StepDto
     {
-        $dto_data               = preg_match($this->regex, $raw_step, $m) ? $m : ['body' => $raw_step];
+        $dto_data = preg_match($this->regex, $raw_step, $m) ? $m : ['body' => $raw_step];
         $dto_data['line_break'] = $previousStep->getKeyword() != 'Tag';
 
         return new StepDto($dto_data);

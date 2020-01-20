@@ -26,7 +26,7 @@ class PyStringsDto
      */
     public function __construct(array $rows, int $padding = 0)
     {
-        $this->rows    = $rows;
+        $this->rows = $rows;
         $this->padding = $padding;
     }
 

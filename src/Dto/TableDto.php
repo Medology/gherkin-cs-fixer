@@ -23,7 +23,7 @@ class TableDto
      */
     public function __construct(array $cells, array $widths)
     {
-        $this->rows          = $cells;
+        $this->rows = $cells;
         $this->columns_width = $widths;
     }
 

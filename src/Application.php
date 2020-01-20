@@ -52,11 +52,11 @@ class Application
      */
     public function __construct(array $files)
     {
-        $this->files           = $files;
-        $this->stepParser      = new StepParser();
-        $this->tableParser     = new TableParser();
-        $this->tableFixer      = new TableFixer();
-        $this->pyStringsFixer  = new PyStringsFixer();
+        $this->files = $files;
+        $this->stepParser = new StepParser();
+        $this->tableParser = new TableParser();
+        $this->tableFixer = new TableFixer();
+        $this->pyStringsFixer = new PyStringsFixer();
         $this->pyStringsParser = new PyStringsParser();
         $this->previousStepDto = new StepDto();
     }
@@ -86,7 +86,7 @@ class Application
      */
     private function fix(string $file_path): void
     {
-        $content    = '';
+        $content = '';
         $fileReader = FileHelper::readFile($file_path);
         while ($fileReader->current()) {
             $content .= $this->fixStep($fileReader);
