@@ -58,11 +58,11 @@ class TableFixer
         $left_padding = str_repeat(' ', self::PADDING);
 
         if ($rowDto->getType() == 'comment') {
-            return $left_padding.'#'.$rowDto->getRaw().PHP_EOL;
+            return $left_padding . '#' . $rowDto->getRaw() . PHP_EOL;
         }
         $row_cells = $this->setCellPadding($rowDto);
-        $content = '| '.implode(' | ', $row_cells).' |'.PHP_EOL;
+        $content = '| ' . implode(' | ', $row_cells) . ' |' . PHP_EOL;
 
-        return $left_padding.$content;
+        return $left_padding . $content;
     }
 }

@@ -57,7 +57,7 @@ class StepDto
         } elseif (in_array($content['keyword'], self::STEP_KEYWORDS)) {
             $this->keyword = $content['keyword'];
         } else {
-            throw new InvalidKeywordException('Mismatched parsed keyword: '.$content['keyword']);
+            throw new InvalidKeywordException('Mismatched parsed keyword: ' . $content['keyword']);
         }
 
         $this->body = $content['body'] ?? '';

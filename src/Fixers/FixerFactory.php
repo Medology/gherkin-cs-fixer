@@ -20,7 +20,7 @@ class FixerFactory
      */
     public static function getStepFixer(StepDto $stepDTO): StepFixer
     {
-        $fixerClass = '\Medology\GherkinCsFixer\Fixers\\'.$stepDTO->getKeyword().'StepFixer';
+        $fixerClass = '\Medology\GherkinCsFixer\Fixers\\' . $stepDTO->getKeyword() . 'StepFixer';
 
         return new $fixerClass($stepDTO);
     }

@@ -25,7 +25,7 @@ class FileHelper
     public static function readFile(string $file): Generator
     {
         if (!file_exists($file)) {
-            throw new FileNotFound('File cannot be found: '.$file);
+            throw new FileNotFound('File cannot be found: ' . $file);
         }
         $fp = fopen($file, 'rb');
         while ($line = fgets($fp)) {
@@ -44,7 +44,7 @@ class FileHelper
     public static function save(string $file, string $content): void
     {
         if (!file_put_contents($file, $content)) {
-            throw new FileWriteException('There was a problem with saving file: '.$file);
+            throw new FileWriteException('There was a problem with saving file: ' . $file);
         }
     }
 }
