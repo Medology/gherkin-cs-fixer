@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Medology\GherkinCsFixer\Fixers;
 
@@ -18,8 +20,7 @@ class PyStringsFixer
     /**
      * Reformat the text.
      *
-     * @param  PyStringsDto $dto Text content dto.
-     * @return string
+     * @param PyStringsDto $dto text content dto
      */
     public function run(PyStringsDto $dto): string
     {
